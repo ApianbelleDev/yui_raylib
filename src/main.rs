@@ -41,12 +41,12 @@ fn main() {
 	};
 	
 	let (mut rl, thread) = raylib::init()
-	.size(SCREEN_WIDTH, SCREEN_HEIGHT)
+		.size(SCREEN_WIDTH, SCREEN_HEIGHT)
 		.title("Yui")
 		.build();
 	
 	// Load player sprite as texture
-	let player_tex  = rl.load_texture(&thread, "src/gfx/yui_front.png").unwrap();
+	let player_tex = rl.load_texture(&thread, "src/gfx/yui_front.png").unwrap();
 
 	rl.set_target_fps(60);
 	while !rl.window_should_close() {
