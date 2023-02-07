@@ -41,16 +41,16 @@ fn main() {
 		isAttacking: false,
 	};
 	
-    let (mut rl, thread) = raylib::init()
-        .size(SCREEN_WIDTH, SCREEN_HEIGHT)
-        .title("Yui")
-        .build();
+	let (mut rl, thread) = raylib::init()
+	.size(SCREEN_WIDTH, SCREEN_HEIGHT)
+		.title("Yui")
+		.build();
 	
 	// Load player sprite as texture
 	let player_tex  = rl.load_texture(&thread, "src/gfx/yui_front.png").unwrap();
 
 	rl.set_target_fps(60);
-    while !rl.window_should_close() {
+	while !rl.window_should_close() {
 
 		// Move player with inputs
 		if rl.is_key_down(KEY_RIGHT){
@@ -67,10 +67,10 @@ fn main() {
 		}
 
 		
-        let mut d = rl.begin_drawing(&thread);
+		let mut d = rl.begin_drawing(&thread);
 		
-        d.clear_background(Color::WHITE);
-        d.draw_texture(&player_tex, player.x, player.y, Color::WHITE);
-        d.draw_fps(0, 0);
-    }
+		d.clear_background(Color::WHITE);
+		d.draw_texture(&player_tex, player.x, player.y, Color::WHITE);
+		d.draw_fps(0, 0);
+	}
 }
