@@ -32,7 +32,6 @@ enum AnimationState {
 
 
 fn main() {
-
 	let mut player = Player {
 		x: 430,
 		y: 320,
@@ -51,7 +50,6 @@ fn main() {
 
 	rl.set_target_fps(60);
 	while !rl.window_should_close() {
-
 		// Move player with inputs
 		if rl.is_key_down(KEY_RIGHT){
 			player.x += player.speed;
