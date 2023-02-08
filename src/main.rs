@@ -5,9 +5,9 @@ const SCREEN_WIDTH: i32 = 960;
 const SCREEN_HEIGHT: i32 = 640;
 
 struct Player {
-	x: i32,
-	y: i32,
-	speed: i32,
+	x: f32,
+	y: f32,
+	speed: f32,
 	health: u32,
 	isAttacking: bool,
 }
@@ -33,9 +33,9 @@ enum AnimationState {
 
 fn main() {
 	let mut player = Player {
-		x: 430,
-		y: 320,
-		speed: 3,
+		x: 430.0,
+		y: 320.0,
+		speed: 150.0,
 		health: 3,
 		isAttacking: false,
 	};
@@ -52,23 +52,23 @@ fn main() {
 	while !rl.window_should_close() {
 		// Move player with inputs
 		if rl.is_key_down(KEY_RIGHT){
-			player.x += player.speed;
+			player.x += player.speed * rl.get_frame_time();
 		}
 		if rl.is_key_down(KEY_LEFT){
-			player.x -= player.speed;
+			player.x -= player.speed * rl.get_frame_time();
 		}
 		if rl.is_key_down(KEY_UP){
-			player.y -= player.speed;
+			player.y -= player.speed * rl.get_frame_time();
 		}
 		if rl.is_key_down(KEY_DOWN){
-			player.y += player.speed;
+			player.y += player.speed * rl.get_frame_time();
 		}
 
 		
 		let mut d = rl.begin_drawing(&thread);
 		
 		d.clear_background(Color::WHITE);
-		d.draw_texture(&player_tex, player.x, player.y, Color::WHITE);
+		d.draw_texture(&player_tex, player.x as i32, player.y as i32, Color::WHITE);
 		d.draw_fps(0, 0);
 	}
 }
