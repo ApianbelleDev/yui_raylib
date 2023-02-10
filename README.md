@@ -6,7 +6,7 @@ raylib
 install raylib to your home directory then run the build script by typing `./build.sh` or double clicking it in your file manager. 
 there are commandline arguments which are as follows
 ```txt
-	Usage: ./build-linux.sh [-hdusrcqq]
+Usage: ./build-linux.sh [-hdusrcqq]
    -h  Show this information"
    -d  Faster builds that have debug symbols, and enable warnings
    -u  Run upx* on the executable after compilation (before -r)
